@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.lit-img-clip {
+    background-size: 100% 100%;
+    background-position: center;
+}
