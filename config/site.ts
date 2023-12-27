@@ -62,4 +62,21 @@ export const siteConfig = {
 		discord: "https://discord.gg/9b6yyZKmH4",
 		download: "#"
 	},
+	cards: [
+		{
+			topic: "Graphics design, Branding & General Printing",
+			content: "Match your idea with creative designs, good printing and branding project.",
+			button: "Send A Request"
+		},
+		{
+			topic: "Photocopy, Typing & Scanning",
+			content: "Acess quick quality sharp photocopies and good typing services.",
+			button: "Send A Request"
+		},
+		{
+			topic: "esult checking application & many more",
+			content: "Fast result checking, online application with esase",
+			button: "Send A Request"
+		}
+	]
 };

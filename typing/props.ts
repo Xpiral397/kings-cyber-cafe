@@ -8,3 +8,9 @@ export interface CardTemplateProps {
     footer?: ReactNode
     button?: ReactNode
 }
+
+export interface CardProps {
+    topic: string
+    content: string
+    button: string
+}
