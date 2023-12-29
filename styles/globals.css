@@ -5,3 +5,15 @@
     background-size: 100% 100%;
     background-position: center;
 }
+
+.mac-2 {
+    max-height: 10%;
+    min-width: 250px;
+    width: 300px;
+}
+
+.mac {
+    max-height: 250px;
+    min-width: 250px;
+    width: 300px;
+}
