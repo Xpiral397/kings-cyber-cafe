@@ -1,5 +1,6 @@
 import type Image from "next/image"
-import {ReactNode} from "react"
+import {ReactElement, ReactNode} from "react"
+import {ElementFlags} from "typescript"
 
 export interface CardTemplateProps {
     header?: ReactNode
@@ -13,4 +14,12 @@ export interface CardProps {
     topic: string
     content: string
     button: string
+}
+
+export interface CustomerProps {
+    id: string | number
+    name: string
+    resident: string
+    feedbackText: string
+    image: ReactElement
 }

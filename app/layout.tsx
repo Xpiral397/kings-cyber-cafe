@@ -30,21 +30,21 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en" suppressHydrationWarning>
+		<html className="w-full w-screen" lang="en" suppressHydrationWarning>
 			<head />
 			<body
 				className={clsx(
-					"min-h-screen bg-background font-sans antialiased",
+					"w-full h-full bg-background font-sans antialiased",
 					fontSans.variable
 				)}
 			>
 				<Providers themeProps={{attribute: "class", defaultTheme: "dark"}}>
-					<div className="relative flex flex-col h-full">
+					<div className="w-full relative flex flex-col h-full">
 						<Navbar />
 						<main className="w-full h-full">
 							{children}
 						</main>
-						<footer className="w-full bg-danger flex items-center justify-center py-3">
+						<footer className="sm:mt-1 mt-[100px] -full bg-danger flex items-center justify-center py-3">
 							<Link
 								isExternal
 								className="flex items-center gap-1 text-current"

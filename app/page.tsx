@@ -15,8 +15,14 @@ import WomenTeaching from '@/public/svgs/wm-teach.svg'
 import PaperCounting from '@/public/svgs/paper-conting.svg'
 import GuyWriting from '@/public/svgs/guy-writing.svg'
 import ResultCheking from '@/public/svgs/result-checking.svg'
+import ApplePlayStore from '@/public/svgs/apple-play.svg'
+import GooglePlayStore from '@/public/svgs/google-play.svg'
+import KingsMobilePreview from '@/public/svgs/mb-white.svg'
 import SVGPattern from '@/public/svgs/pattern.svg'
 import AboutUss from '@/public/svgs/aboutUs.svg'
+import Customer1 from '@/public/svgs/customer-1.svg'
+import Customer2 from "@/public/svgs/customer-2.svg"
+import Customer3 from "@/public/svgs/customer-3.svg"
 import MobileView from '@/public/svgs/mobile-view.svg'
 
 
@@ -25,20 +31,58 @@ import Image from "next/image";
 import {Button} from "@nextui-org/button";
 import {ScrollShadow} from "@nextui-org/react";
 import CardTemplate, {Card, CardImage} from "@/components/cards";
+import {Customer, CustomerFeedback} from "@/components/customerFeedback";
+import {CustomerProps} from "@/typing/props";
+import {Kings} from "next/font/google";
+
+
 
 export default function Home() {
+
+	// Card
 	const GraphicsCard = <Card topic="Graphics design, Branding & General Printing" content="Match your idea with creative design, good printing, an branding project" button="Send a Request" />
-	const PhotoCopy = <Card topic="Photocopy, Typing & Scanning" content="Access quick quality sharp photocopies and good typing service" button="Send a Rquest"></Card>
 	const ResultCheckings = <Card topic="Result checking , online application with ease" content="Fast result checking, online application with ease " button='Send a Request' />
+	const PhotoCopy = <Card topic="Photocopy, Typing & Scanning" content="Access quick quality sharp photocopies and good typing service" button="Send a Rquest"></Card>
 
 
+	// Images
 	const Image1 = <Image src={PaperCounting.src} alt='result-cheking' width={300} height={100} />
 	const Image2 = <Image src={WomenTeaching.src} alt='result-cheking' width={400} height={500} />
+	const ImageCustomer1 = <Image src={Customer1.src} width={64} height={300} alt="customer-image" />
+	const ImageCustomer2 = <Image src={Customer2.src} width={64} height={300} alt="customer-image" />
+	const ImageCustomer3 = <Image src={Customer3.src} width={64} height={300} alt="customer-image" />
 	const Image3 = <Image className=" max-h-[350px] max-w-[250px]" src={GuyWriting.src} alt='result-cheking' width={400} height={0} />
 
 
+	// Data
+
+	const CustomerData: CustomerProps[] = [
+		{
+			id: 1,
+			image: ImageCustomer1,
+			name: "Jason Oladipo",
+			resident: 'Student',
+			feedbackText: 'They are amazing and helped out with my project. For from the typing, to printing and my spiral binding, they handled them all and my project came it excellent well'
+		},
+		{
+			id: 1,
+			image: ImageCustomer2,
+			name: "Abidemi Hassan",
+			resident: 'Professional',
+			feedbackText: 'They are amazing and helped out with my project. For from the typing, to printing and my spiral binding, they handled them all and my project came it excellent well'
+		},
+		{
+			id: 1,
+			image: ImageCustomer2,
+			name: "Grace Thomas",
+			resident: 'Student',
+			feedbackText: 'I got my printing job done at an unbelievable price and got it the same day. Thank you'
+
+		}
+	]
+
 	return (
-		<main>
+		<main className="space-y-10">
 			<section className="mb-10 w-full  flex flex-col items-center justify-center space-y-10" >
 				<div className="relative h-full w-full overflow-hidden sm:h-[50vh] h-[60vh]">
 					<div>
@@ -55,12 +99,12 @@ export default function Home() {
 						<div className="flex flex-col justify-between h-full">
 							<div className="sm:hidden">
 								<section className="flex flex-col mt-10 w-full h-full justify-center items-center text-white p-8">
-									<h1 className="text-6xl font-bold mb-4 text-center">
+									<h1 className="text-4xl sm:text-6xl font-bold mb-4 text-center">
 										<p>Your Trusted</p>
 										<p className="whitespace-nowrap">Partner In <span className="text-orange-500">Digital</span></p>
 										<p>Cafe Experience</p>
 									</h1>
-									<Button variant="flat" className="rounded-md p-6 w-full bg-red-500 text-white text-sm">
+									<Button variant="flat" className="rounded-md p-6 px-5 sm:w-full bg-red-500 text-white text-sm">
 										Start A Project
 									</Button>
 								</section>
@@ -172,48 +216,50 @@ export default function Home() {
 					</div>
 				</div>
 
-				<ScrollShadow hideScrollBar orientation="vertical" className="max-width-full h-full">
-					<div className="hidden sm:flex -space-x-5 items-center justify-center ">
-						<div className="w-full flex flex-col items-center justify-between">
-							<div>{GraphicsCard}</div>
-							<div>{Image2}</div>
+				<div>
+					<ScrollShadow orientation="vertical" className="mt-20 max-width-full h-full">
+						<div className="hidden md:flex -space-x-5 items-center justify-center ">
+							<div className="w-full flex flex-col items-center justify-between">
+								<div>{GraphicsCard}</div>
+								<div>{Image2}</div>
+							</div>
+							<div className="-full flex flex-col items-center justify-center">
+								<div>{Image1}</div>
+								<div>{ResultCheckings}</div>
+							</div>
+							<div className="-full flex flex-col items-center justify-center">
+								<div>{PhotoCopy}</div>
+								<div>{Image3}</div>
+							</div>
 						</div>
-						<div className="-full flex flex-col items-center justify-center">
-							<div>{Image1}</div>
-							<div>{ResultCheckings}</div>
-						</div>
-						<div className="-full flex flex-col items-center justify-center">
-							<div>{PhotoCopy}</div>
-							<div>{Image3}</div>
-						</div>
-					</div>
-				</ScrollShadow>
+					</ScrollShadow>
 
-				<ScrollShadow hideScrollBar orientation="vertical" className="max-width-[800px] scale-[800px] w-full h-full">
-					<div className="dark:bg-red-300 sm:hidden flex flex-col -space-x-5 items-center justify-center ">
-						<div className="w-full flex flex-col items-center justify-between">
-							<div>{GraphicsCard}</div>
-							<div>{Image1}</div>
-						</div>
-						<div className="-full flex flex-col items-center justify-center">
+					<ScrollShadow orientation="vertical" className="max-width-[100px] scale-[800px] w-full h-full">
+						<div className="dark:bg-red-300 md:hidden flex flex-col -space-x-5 items-center justify-center ">
+							<div className="w-full flex flex-col items-center justify-between">
+								<div>{GraphicsCard}</div>
+								<div>{Image1}</div>
+							</div>
+							<div className="-full flex flex-col items-center justify-center">
 
-							<div>{ResultCheckings}</div>
-							<div>{Image2}</div>
+								<div>{ResultCheckings}</div>
+								<div>{Image2}</div>
+							</div>
+							<div className="-full flex flex-col items-center justify-center">
+								<div>{PhotoCopy}</div>
+								<div>{Image3}</div>
+							</div>
 						</div>
-						<div className="-full flex flex-col items-center justify-center">
-							<div>{PhotoCopy}</div>
-							<div>{Image3}</div>
-						</div>
-					</div>
-				</ScrollShadow>
+					</ScrollShadow>
+				</div>
 			</section>
 			<section>
-				<div className='relative flex flex-col justify-center items-center sm:py-1 py-[100px] ' style={{
+				<div className='overflow-hidden relative flex flex-col justify-center items-center sm:py-1 py-[100px] ' style={{
 					backgroundImage: `url(${SVGPattern.src})`
 				}}>
 					<div className="absolute w-full h-full bg-gradient-to-b  from-white from-10% via-transparent via-30%  to-green-200 to-90% bg-gradient-stops-0 "></div>
 					<div className="relative justify-around mb-10 py-5 ">
-						<h1 className="mt-10 text-center font-bold text-4xl font-[cursive, Heltivica , Poppins, sans-serif]"> Why King's App</h1>
+						<h1 className="mt-10 text-center font-bold text-4xl font-[cursive, Heltivica , Poppins, sans-serif]"> {"Why King's App"}</h1>
 						<div className=" gap-x-[56px] mt-[300px] z-[10] flex sm:flex-row flex-col items-center justify-evenly ">
 							<ul className="text-left w-[300px]  md:w-[400px] text-[14px] p-1 space-y-2 sm:px-5">
 								<li>
@@ -302,6 +348,66 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
+
+			<section className="flex flex-col items-center justify-enter">
+				<h1 className="font-bold sm:text-inherit text-center text-3xl mb-5">
+					Our Satisfied customers
+				</h1>
+				<p className="mx-2 text-medium font-medium text-center sm:text-inherit">Customer speak for themeselves about experience</p>
+
+			</section>
+
+			<div className="w-full">
+				<CustomerFeedback>
+					{
+						CustomerData.map((props, index) => {
+							return (
+								<Customer
+									key={index}
+									customer={props}
+								/>
+							)
+						}
+						)
+					}
+				</CustomerFeedback>
+			</div>
+
+			<div className="space-y-0 sm:space-y-5 h-full h-screen flex  sm:flex-row flex-col justify-center sm:justify-around items-center ">
+				<div className="font-bold text-2xl sm:text-3xl sm:px-2 px-5">
+					<p>
+						<span>{"Downlaod King's app on"} </span>
+					</p>
+					<p>
+						<span>
+							google play store store and
+						</span>
+					</p>
+					<p>
+						app store
+					</p>
+					<Button variant="flat" className="bg-danger-500 text-slate-300 text-sm rounded-md">
+						Download App
+					</Button>
+				</div>
+
+				<div className='rounded-full w-[300px] h-[300px] sm:w-[450px] sm:h-[450px] relative flex flex-col justify-center items-center sm:py-1 py-[100px] ' style={{
+					backgroundImage: `url(${SVGPattern.src})`
+				}}>
+					<div className="absolute  rounded-full w-[300px] h-[300px] sm:w-[450px] sm:h-[450px] w-full h-full bg-gradient-to-b opacity-[0.4] from-white from-10% via-[#00C7CE59] via-30%  to-[#00C7CE59] to-90% bg-gradient-stops-0 "></div>
+					<div className="relative">
+						<Image src={KingsMobilePreview.src} height={300} width={250} objectFit="cover" alt="mobile" className=" mt-[300px] left-0 right-0" />
+						<div>
+							{/* <Image src={GooglePlayStore.src} height={300} width={250} objectFit="cover" alt='mobile' className="absolute button-[400px] " /> */}
+							<Image src={ApplePlayStore.src} height={300} width={200} objectFit="cover" alt="mobile" className="absolute top-[420px] left-[100px]" />
+						</div>
+						<div>
+							<Image src={GooglePlayStore.src} height={300} width={200} objectFit="cover" alt="mobile" className="absolute top-[360px] top-10 right-[100px]" />
+						</div>
+
+					</div>
+				</div>
+			</div>
 		</main >
 	);
 }
