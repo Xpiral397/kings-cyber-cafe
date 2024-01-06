@@ -54,8 +54,6 @@ export const Navbar = () => {
 
 	return (
 		<NextUINavbar className="w-full flex justify-between w-full" maxWidth="full" position="sticky">
-
-
 			<NavbarContent className="flex justify-between " >
 				<NavbarBrand as="li" className="gap-3 w-full">
 					<NextLink className="flex justify-start items-center " href="/">
@@ -88,7 +86,6 @@ export const Navbar = () => {
 			<NavbarContent
 				className="hidden sm:flex " justify="end">
 				<NavbarItem className="hidden sm:flex gap-2">
-					<ThemeSwitch />
 				</NavbarItem>
 				{/* <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem> */}
 				<NavbarItem className="hidden md:flex" >
@@ -99,14 +96,12 @@ export const Navbar = () => {
 						href={siteConfig.links.download}
 						variant="flat"
 						color="danger"
-
 					> Downalod App
 					</Button>
 				</NavbarItem>
 			</NavbarContent>
 
 			<NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-				<ThemeSwitch />
 				<NavbarMenuToggle />
 			</NavbarContent>
 

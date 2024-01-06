@@ -23,44 +23,29 @@ export const siteConfig = {
 	],
 	navMenuItems: [
 		{
-			label: "Profile",
-			href: "/profile",
+			label: "Home",
+			href: "/",
 		},
 		{
-			label: "Dashboard",
-			href: "/dashboard",
+			label: "Pricing",
+			href: "/pricing",
 		},
 		{
-			label: "Projects",
-			href: "/projects",
+			label: "Service",
+			href: "/service",
 		},
 		{
-			label: "Team",
-			href: "/team",
-		},
-		{
-			label: "Calendar",
-			href: "/calendar",
-		},
-		{
-			label: "Settings",
-			href: "/settings",
-		},
-		{
-			label: "Help & Feedback",
-			href: "/help-feedback",
-		},
-		{
-			label: "Logout",
-			href: "/logout",
-		},
+			label: "About us",
+			href: "/about",
+		}
 	],
 	links: {
-		github: "https://github.com/nextui-org/nextui",
-		twitter: "https://twitter.com/getnextui",
-		docs: "https://nextui.org",
-		discord: "https://discord.gg/9b6yyZKmH4",
-		download: "#"
+		twitter:
+			"https://twitter.com/KingsOnlineCC",
+		facebook: "https://web.facebook.com/groups/263466069868705/",
+		Instagram: "https://instagram.com/kingsonlinecc?igshid=MzNlNGNkZWQ4Mg==",
+		whatsapp: 'https://wa.me/2347052904849',
+		Linkedln: 'https://www.linkedin.com/company/king-s-online-cyber-cafe/'
 	},
 	cards: [
 		{

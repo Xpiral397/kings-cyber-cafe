@@ -34,6 +34,7 @@ import CardTemplate, {Card, CardImage} from "@/components/cards";
 import {Customer, CustomerFeedback} from "@/components/customerFeedback";
 import {CustomerProps} from "@/typing/props";
 import {Kings} from "next/font/google";
+import Carousal from "@/components/carousal";
 
 
 
@@ -142,7 +143,7 @@ export default function Home() {
 						<p className="text-center">Printing, Photocopy, Book Binding, Lamination, Project Writing and more </p>
 					</div>
 
-					<ScrollShadow hideScrollBar orientation="vertical" offset={100} className="max-width-[600px] w-full w-full flex items-center lg:justify-center space-x-10">
+					<ScrollShadow hideScrollBar orientation="vertical" offset={100} className="hidden max-width-[600px] w-full w-full md:flex items-center lg:justify-center space-x-10">
 						<CardTemplate image={Researcher.src} alt='img-1' footer={
 							<h1 className="text-white text-sm  ">Researcher & Project Work</h1>} />
 						<CardTemplate image={ResultCheking.src} alt='img-2' footer={
@@ -153,9 +154,46 @@ export default function Home() {
 								<p>Hard cover Binding Stationaries</p>
 							</h1>} />
 					</ScrollShadow>
+
+					<Carousal
+						className="sm:flex md:hidden block"
+						sidePallet={true}
+						Items={
+							[
+								<CardTemplate
+									image={Researcher.src}
+									alt='img-1'
+									key={1}
+									footer={
+										<h1 className="text-white text-sm  ">Researcher & Project Work</h1>
+									}
+								/>,
+								<CardTemplate
+									image={ResultCheking.src}
+									alt='img-2'
+									key={2}
+									footer={
+										<h1 className="text-white text-sm  ">
+											<p>Result checking, </p>
+											<p>online application & many more</p>
+										</h1>}
+								/>,
+								<CardTemplate
+									image={LaptopAtWork}
+									alt='img-3'
+									key={3}
+									footer={
+										<h1 className="text-white text-sm  ">
+											<p>Spiral Binding</p>
+											<p>Hard cover Binding Stationaries</p>
+										</h1>}
+								/>
+							]
+						}
+					/>
 				</div>
 
-				<div className="mt-10 flex flex-row items-center h-full -space-x-[50px] sm:space-x-[100px] mt-10">
+				<div className=" mt-10 flex flex-row items-center h-full md:space-x-[50px] lg:space-x-[100px] mt-10">
 					<div>
 						<Image
 							className="hidden sm:flex"
@@ -235,31 +273,33 @@ export default function Home() {
 					</ScrollShadow>
 
 					<ScrollShadow orientation="vertical" className="max-width-[100px] scale-[800px] w-full h-full">
-						<div className="dark:bg-red-300 md:hidden flex flex-col -space-x-5 items-center justify-center ">
+						<div className="md:hidden flex flex-col -space-x-5 items-center justify-center ">
 							<div className="w-full flex flex-col items-center justify-between">
-								<div>{GraphicsCard}</div>
 								<div>{Image1}</div>
-							</div>
-							<div className="-full flex flex-col items-center justify-center">
+								<div>{GraphicsCard}</div>
 
-								<div>{ResultCheckings}</div>
-								<div>{Image2}</div>
 							</div>
 							<div className="-full flex flex-col items-center justify-center">
-								<div>{PhotoCopy}</div>
+								<div>{Image2}</div>
+								<div>{ResultCheckings}</div>
+
+							</div>
+							<div className="-full flex flex-col items-center justify-center">
 								<div>{Image3}</div>
+								<div>{PhotoCopy}</div>
 							</div>
 						</div>
 					</ScrollShadow>
 				</div>
 			</section>
+
 			<section>
 				<div className='overflow-hidden relative flex flex-col justify-center items-center sm:py-1 py-[100px] ' style={{
 					backgroundImage: `url(${SVGPattern.src})`
 				}}>
 					<div className="absolute w-full h-full bg-gradient-to-b  from-white from-10% via-transparent via-30%  to-green-200 to-90% bg-gradient-stops-0 "></div>
-					<div className="relative justify-around mb-10 py-5 ">
-						<h1 className="mt-10 text-center font-bold text-4xl font-[cursive, Heltivica , Poppins, sans-serif]"> {"Why King's App"}</h1>
+					<div className="relative justify-around mb-10  ">
+						<h1 className="mt-8 text-center font-bold text-4xl font-[cursive, Heltivica , Poppins, sans-serif]"> {"Why King's App"}</h1>
 						<div className=" gap-x-[56px] mt-[300px] z-[10] flex sm:flex-row flex-col items-center justify-evenly ">
 							<ul className="text-left w-[300px]  md:w-[400px] text-[14px] p-1 space-y-2 sm:px-5">
 								<li>
@@ -323,18 +363,19 @@ export default function Home() {
 					</div>
 				</div>
 
-				<div className="flex flex-col h-full w-full justify-center items-center p-12 py-10 px-2">
-					<div className="flex sm:flex-row flex-col justify-center space-x-[80px] items-center space-y-2">
+				<div className="flex flex-col h-full w-full justify-center items-center p-3 lg:p-12 py-10 lg:px-2">
+					<div className="flex md:flex-row flex-col justify-center md:space-x-[40px] lg:space-x-[90px] items-center space-y-2">
+						<h1 className='md:hidden  text-5xl font-bold text-center mb-5 pt-3'>About Us</h1>
 						<Image
 							src={AboutUss.src}
 							width={500}
 							height={500}
 							alt='about-us'
-							className="rounded-md"
+							className="rounded-md md:w-[400px]"
 							objectFit="cover"
 						/>
-						<div className=" sm:w-3/6 sm:px-2 px-0 w-full">
-							<h1 className='text-5xl font-bold sm:text-center xl:text-left mb-3'>About Us</h1>
+						<div className=" md:w-full  sm:w-3/6 sm:px-2 px-0 w-full">
+							<h1 className='hidden md:flex text-5xl font-bold sm:text-center xl:text-left mb-3'>About Us</h1>
 							<div>
 								<h1 className="font-[650] text-medium mb-1 ">King’s Cyber cafe App</h1>
 								<p className="text-zinc-950 w-full sm:text-[16px] text-[15px] sm:w-full sm:w-[95%] w-full">
@@ -354,8 +395,8 @@ export default function Home() {
 					Our Satisfied customers
 				</h1>
 				<p className="mx-2 text-medium font-medium text-center sm:text-inherit">Customer speak for themeselves about experience</p>
-
 			</section>
+
 
 			<div className="w-full">
 				<CustomerFeedback>
@@ -404,7 +445,6 @@ export default function Home() {
 						<div>
 							<Image src={GooglePlayStore.src} height={300} width={200} objectFit="cover" alt="mobile" className="absolute top-[360px] top-10 right-[100px]" />
 						</div>
-
 					</div>
 				</div>
 			</div>

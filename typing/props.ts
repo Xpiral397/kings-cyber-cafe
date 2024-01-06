@@ -3,6 +3,7 @@ import {ReactElement, ReactNode} from "react"
 import {ElementFlags} from "typescript"
 
 export interface CardTemplateProps {
+    key?: number
     header?: ReactNode
     image: string
     alt: string
