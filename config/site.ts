@@ -1,5 +1,13 @@
 export type SiteConfig = typeof siteConfig;
 
+
+function ScrollToSite(siteName: string) {
+	const siteIdentity = document.getElementById(siteName)
+	if(siteIdentity) {
+		siteIdentity.scrollIntoView({behavior: 'smooth'})
+	}
+}
+
 export const siteConfig = {
 	name: "Next.js + NextUI",
 	description: "Make beautiful websites regardless of your design experience.",
@@ -7,41 +15,38 @@ export const siteConfig = {
 		{
 			label: "Home",
 			href: "/",
-		},
-		{
-			label: "Pricing",
-			href: "/pricing",
+			onclick: () => ScrollToSite('home')
 		},
 		{
 			label: "Service",
 			href: "/service",
+			onclick: () => ScrollToSite('service')
 		},
 		{
 			label: "About us",
 			href: "/about",
+			onclick: () => ScrollToSite('about-us')
 		}
 	],
 	navMenuItems: [
 		{
 			label: "Home",
 			href: "/",
-		},
-		{
-			label: "Pricing",
-			href: "/pricing",
+			onclick: () => ScrollToSite('home')
 		},
 		{
 			label: "Service",
 			href: "/service",
+			onclick: () => ScrollToSite('service')
 		},
 		{
 			label: "About us",
 			href: "/about",
+			onclick: () => ScrollToSite('about-us')
 		}
 	],
 	links: {
-		twitter:
-			"https://twitter.com/KingsOnlineCC",
+		twitter: "https://twitter.com/KingsOnlineCC",
 		facebook: "https://web.facebook.com/groups/263466069868705/",
 		Instagram: "https://instagram.com/kingsonlinecc?igshid=MzNlNGNkZWQ4Mg==",
 		whatsapp: 'https://wa.me/2347052904849',

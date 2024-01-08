@@ -23,7 +23,7 @@ export function CustomerFeedback({children}: {children: ReactNode[]}) {
             <ScrollShadow className='max-w-full w-full h-full ' offset={100} hideScrollBar orientation='vertical'>
                 <div className='flex w-full items-center justify-center px-2 space-x-10 min-w-[254px] min-h-[271px]'>
                     <Carousal sidePallet={false} Items={children} />
-                    <Carousal sidePallet={false} Items={children} />
+                    <Carousal className='hidden md:flex' sidePallet={false} Items={children} />
                     <div className='hidden lg:flex'>
                         <Carousal sidePallet={false} Items={children} />
                     </div>

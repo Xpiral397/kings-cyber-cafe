@@ -83,7 +83,7 @@ export default function Home() {
 	]
 
 	return (
-		<main className="space-y-10">
+		<main className="space-y-10" id='home'>
 			<section className="mb-10 w-full  flex flex-col items-center justify-center space-y-10" >
 				<div className="relative h-full w-full overflow-hidden sm:h-[50vh] h-[60vh]">
 					<div>
@@ -137,7 +137,7 @@ export default function Home() {
 					</div>
 				</div>
 
-				<div className="space-y-10 w-full flex flex-col justify-center items-center">
+				<div className="space-y-10 w-full flex flex-col justify-center items-center" id='service'>
 					<div>
 						<h1 className="text-2xl text-center sm:text-4xl mt-10 font-medium">All Your Cafe Needs Are Here</h1>
 						<p className="text-center">Printing, Photocopy, Book Binding, Lamination, Project Writing and more </p>
@@ -193,7 +193,7 @@ export default function Home() {
 					/>
 				</div>
 
-				<div className=" mt-10 flex flex-row items-center h-full md:space-x-[50px] lg:space-x-[100px] mt-10">
+				<div className=" mt-10 flex flex-row items-center h-full md:space-x-[50px] lg:space-x-[100px] mt-10" id="customer">
 					<div>
 						<Image
 							className="hidden sm:flex"
@@ -363,7 +363,7 @@ export default function Home() {
 					</div>
 				</div>
 
-				<div className="flex flex-col h-full w-full justify-center items-center p-3 lg:p-12 py-10 lg:px-2">
+				<div className="flex flex-col h-full w-full justify-center items-center p-3 lg:p-12 py-10 lg:px-2" id='about-us' >
 					<div className="flex md:flex-row flex-col justify-center md:space-x-[40px] lg:space-x-[90px] items-center space-y-2">
 						<h1 className='md:hidden  text-5xl font-bold text-center mb-5 pt-3'>About Us</h1>
 						<Image
@@ -425,7 +425,7 @@ export default function Home() {
 						</span>
 					</p>
 					<p>
-						app store
+						app storegit
 					</p>
 					<Button variant="flat" className="bg-danger-500 text-slate-300 text-sm rounded-md">
 						Download App
@@ -440,10 +440,10 @@ export default function Home() {
 						<Image src={KingsMobilePreview.src} height={300} width={250} objectFit="cover" alt="mobile" className=" mt-[300px] left-0 right-0" />
 						<div>
 							{/* <Image src={GooglePlayStore.src} height={300} width={250} objectFit="cover" alt='mobile' className="absolute button-[400px] " /> */}
-							<Image src={ApplePlayStore.src} height={300} width={200} objectFit="cover" alt="mobile" className="absolute top-[420px] left-[100px]" />
+							<Image src={ApplePlayStore.src} height={300} width={200} objectFit="cover" alt="mobile" className="absolute top-[420px] left-[150px]" />
 						</div>
 						<div>
-							<Image src={GooglePlayStore.src} height={300} width={200} objectFit="cover" alt="mobile" className="absolute top-[360px] top-10 right-[100px]" />
+							<Image src={GooglePlayStore.src} height={300} width={200} objectFit="cover" alt="mobile" className="absolute top-[360px] top-10 right-[150px]" />
 						</div>
 					</div>
 				</div>

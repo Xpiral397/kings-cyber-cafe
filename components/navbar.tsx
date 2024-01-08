@@ -1,3 +1,4 @@
+'use client'
 import {
 	Navbar as NextUINavbar,
 	NavbarContent,
@@ -29,6 +30,8 @@ import {
 
 import {Logo} from "@/components/icons";
 import KingsLogo from "./KingsLogo";
+import {ListboxItem} from "@nextui-org/react";
+import {AnimationSequence} from "framer-motion";
 
 export const Navbar = () => {
 	const searchInput = (
@@ -65,23 +68,21 @@ export const Navbar = () => {
 			<NavbarContent justify="center">
 				<NavbarItem>
 					<ul className="hidden lg:flex gap-8 justify-start ml-2 flex-1">
-						{siteConfig.navItems.map((item) => (
-							<NavbarItem key={item.href}>
-								<NextLink
-									className={clsx(
-										linkStyles({color: "foreground"}),
-										"data-[active=true]:text-primary data-[active=true]:font-medium"
-									)}
-									color="foreground"
-									href={item.href}
-								>
-									<p className="font-medium border-danger-300 border-b">{item.label}</p>
-								</NextLink>
+						{siteConfig.navItems.map((item: any, index: number) => (
+							<NavbarItem key={item.href}
+								className={clsx(
+									linkStyles({color: "foreground"}),
+									"data-[active=true]:text-primary data-[active=true]:font-medium"
+								)}
+								onClick={() => item.onclick()}>
+
+
+								<p className="font-medium border-danger-300 border-b">{item.label}</p>
 							</NavbarItem>
 						))}
 					</ul>
 				</NavbarItem>
-			</NavbarContent>
+			</NavbarContent >
 
 			<NavbarContent
 				className="hidden sm:flex " justify="end">
@@ -93,7 +94,6 @@ export const Navbar = () => {
 						isExternal
 						as={Link}
 						className="text-sm  bg-danger text-white font-bold"
-						href={siteConfig.links.download}
 						variant="flat"
 						color="danger"
 					> Downalod App
@@ -120,6 +120,7 @@ export const Navbar = () => {
 								}
 								href="#"
 								size="lg"
+								onClick={() => item.onclick()}
 							>
 								{item.label}
 							</Link>
@@ -127,6 +128,6 @@ export const Navbar = () => {
 					))}
 				</div>
 			</NavbarMenu>
-		</NextUINavbar>
+		</NextUINavbar >
 	);
 };

@@ -41,8 +41,8 @@ export default function Carousal({Items, className, sidePallet}: {Items: ReactNo
                         sidePallet &&
                         <div className='bg-gradient-to-r from-slate-800 to-transparent h-full w-[10%] absolute top-0 left-0'></div> &&
                         <div className='bg-gradient-to-l from-slate-800 to-transparent h-full w-[10%] absolute top-0 right-0'></div>
-                    } <span className='mx-1 absolute left-0 top-[45%] text-purple-900  text-[10px] font-black ' onClick={() => {Control('backward')}}><ArrowBackIos /></span>
-                    <span className='mx-1 absolute right-0 top-[45%] text-purple-950 text-[10px] font-black ' onClick={() => {Control('forward')}}><ArrowForwardIos /></span>
+                    } <span className='mx-1 absolute left-0 top-[45%] text-purple-900  text-[10px] font-black ' onClick={() => {Control('backward')}}><ArrowBackIos className='text-[10px]' /></span>
+                    <span className='mx-1 absolute right-0 top-[45%] text-purple-950 text-[10px] font-black ' onClick={() => {Control('forward')}}><ArrowForwardIos className='text-[10px]' /></span>
                 </div>
             </div>
         </div>
