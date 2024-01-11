@@ -69,14 +69,12 @@ export const Navbar = () => {
 				<NavbarItem>
 					<ul className="hidden lg:flex gap-8 justify-start ml-2 flex-1">
 						{siteConfig.navItems.map((item: any, index: number) => (
-							<NavbarItem key={item.href}
+							<NavbarItem key={item.href}f 
 								className={clsx(
 									linkStyles({color: "foreground"}),
 									"data-[active=true]:text-primary data-[active=true]:font-medium"
 								)}
 								onClick={() => item.onclick()}>
-
-
 								<p className="font-medium border-danger-300 border-b">{item.label}</p>
 							</NavbarItem>
 						))}

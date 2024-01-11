@@ -23,7 +23,7 @@ export function Card(props: CardProps) {
     return <div className="rounded-md mt-10 mb-10 max-h-[350px] max-w-[350px] h-[120px] sm:h-[300px]  w-[350px]  flex flex-col items-center justify-between">
 
         <div className="max-w-[300px]">
-            <h1 className="font-bold text-sm text-center text-orange-500">{props.topic}</h1>
+            <h1 className="font-bold text-2xl text-center text-zinc-500">{props.topic}</h1>
             <Divider />
             <h1 className="text-left px-2 text-medium">{props.content}</h1>
         </div>
