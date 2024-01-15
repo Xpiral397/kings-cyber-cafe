@@ -38,7 +38,7 @@ export function Customer({customer}: {customer: CustomerProps}) {
     return (
         < div className='py-10 w-[300px]' >
             <div id={customer?.id as string} className='py-2 text-cent space-y-1 w-[300px] relative bg-[#31FFFF] rounded-md text-center px-3 '>
-                <div className='flex flex-col items-center  absolute w-full -top-10 mx-[10px] ' >
+                <div className='flex flex-col items-center  absolute w-full -top-10 mx-[-16px] ' >
                     {(customer?.image)}
                 </div >
 

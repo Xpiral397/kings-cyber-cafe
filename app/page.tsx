@@ -87,7 +87,7 @@ export default function Home() {
     return (
         <main className="space-y-10" id='home'>
             <section className="mb-10 w-full  flex flex-col items-center justify-center space-y-10" >
-                <div className="relative h-full w-full overflow-hidden sm:h-[50vh] h-[60vh]">
+                <div className="relative h-full w-full overflow-hidden sm:h-[50vh] h-[40vh]">
                     <div>
                         <Image
                             src={MainView}
@@ -96,13 +96,13 @@ export default function Home() {
                             objectFit="cover"
                             quality={900} // Adjust quality as needed
                         />
-                        <div className="px-2 absolute w-full sm:h-[55vh] h-[60vh] bg-[#008C83] opacity-[0.5]"></div>
+                        <div className="px-2 card absolute w-full sm:h-[55vh] h-[60vh] bg-[#008C83] opacity-[0.5]"></div>
                     </div>
                     <div className="flex justify-center items-center relative  w-full h-[60vh] bg-[#00000001]">
                         <div className="flex flex-col justify-between h-full">
-                            <div className="sm:hidden">
+                            <div className="sm:hidden flex">
                                 <section className="flex flex-col mt-10 w-full h-full justify-center items-center text-white p-8">
-                                    <h1 className="text-2xl md:text-3xl lg:text-4xl sm:text-6xl font-bold mb-4 text-center">
+                                    <h1 className="lg:px-2 md:text-3xl lg:text-4xl xl:text-6xl font-medium mb-4 text-center">
                                         <p>Your Trusted</p>
                                         <p className="whitespace-nowrap">Partner In <span className="text-orange-500">Digital</span></p>
                                         <p>Cafe Experience</p>
@@ -116,7 +116,7 @@ export default function Home() {
 
                         <div className="hidden sm:flex items-center justify-around w-full">
                             <section className=" flex flex-col   text-white ">
-                                <h1 className="text-6xl font-bold space-y-1 ">
+                                <h1 className="text-4xl md:text-6xl font-medium space-y-2 ">
                                     <p>Your Trusted</p>
                                     <p>Partner In <span className="text-orange-500">Digital</span></p>
                                     <p>Cafe Experience</p>
@@ -125,9 +125,9 @@ export default function Home() {
                                     Start A Project
                                 </Button>
                             </section>
-                            <div className="w-[300px] h-[500px]">
+                            <div className="md:w-[300px] w-[225px] h-[500px]">
                                 <Image
-                                    className="mb-20  transform skew-y-12 "
+                                    className="md:w-[400px] w-[300px] mb-20  transform skew-y-12 "
                                     src={MobileSample}
                                     alt="Mobile Sample"
                                     height={250}
@@ -198,7 +198,7 @@ export default function Home() {
                 <div className=" mt-10 flex flex-row items-center h-full md:space-x-[50px] lg:space-x-[100px] mt-10" id="customer">
                     <div>
                         <Image
-                            className="hidden sm:flex"
+                            className="hidden md:flex"
                             src={MobileSample}
                             alt="Mobile Sample"
                             height={250}
@@ -258,19 +258,29 @@ export default function Home() {
 
                 <div>
                     <ScrollShadow orientation="vertical" className="mt-20 max-width-full h-full">
-                        <div className="hidden md:flex -space-x-5 items-center justify-center ">
+                        {/* <div className="hidden md:flex -space-x-5 items-center justify-center ">
                             <div className="w-full flex flex-col items-center justify-between">
                                 <div>{GraphicsCard}</div>
                                 <div>{Image2}</div>
                             </div>
                             <div className="-full flex flex-col items-center justify-center">
-                                <div>{Image1}</div>
+                                <div>{Image2}</div>
                                 <div>{ResultCheckings}</div>
                             </div>
                             <div className="-full flex flex-col items-center justify-center">
                                 <div>{PhotoCopy}</div>
-                                <div>{Image3}</div>
+                                <div>{Image2}</div>
                             </div>
+                        </div> */}
+                        <div className='hidden md:grid  w-full grid grid-cols-3 gap-0'>
+                            <div>{GraphicsCard}</div>
+                            <div>{Image1}</div>
+                            <div>{PhotoCopy}</div>
+                            <div>{Image1}</div>
+                            <div>{ResultCheckings}</div>
+                            <div>{Image1}</div>
+
+
                         </div>
                     </ScrollShadow>
 
@@ -296,9 +306,7 @@ export default function Home() {
             </section>
 
             <section>
-                <div className='overflow-hidden relative flex flex-col justify-center items-center sm:py-1 py-[100px] ' style={{
-                    backgroundImage: `url(${SVGPattern.src})`
-                }}>
+                <div className='overflow-hidden relative flex flex-col justify-center items-center sm:py-1 py-[100px]' >
                     <div className="absolute w-full h-full bg-gradient-to-b  from-white from-10% via-transparent via-30%  to-green-200 to-90% bg-gradient-stops-0 "></div>
                     <div className="relative justify-around mb-10  ">
                         <h1 className="mt-8 text-center font-bold text-4xl font-[cursive, Heltivica , Poppins, sans-serif]"> {"Why King's App"}</h1>
@@ -365,8 +373,8 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div className="mt-20 sm:px-10 px-2">
-                    <div className=' rounded-md  bg-green-100 flex sm:flex-col flex-row items-center justify-ceter'>
+                <div className="mb-[100px] mt-20 sm:p-1 xl:p-12 lg:p-6 px-2">
+                    <div className=' rounded-md bg-gradient-to-b from-green-100 to-white p-5 flex sm:flex-col flex-row items-center justify-ceter'>
                         <div className='text-center py-2'>
                             <h1 className="text-zinc-800 text-4xl mb-5 space-y-2 font-bold mt-2">Contact Us</h1>
                             <div className='flex space-x-2 justify-center item-center mb-2'>
@@ -377,16 +385,16 @@ export default function Home() {
                                 </span>
                             </div>
 
-                            <div className="hidden sm:flex items-center bg-white p-6 rounded0md space-x-5">
+                            <div className="flex lg:flex-row flex-col items-center  sm:p-12 rounded-md space-x-5 lg:space-y-0 space-y-5">
                                 <div className="w-1/2 h-[300px] rounded-md p-6 w-full bg-gradient-to-br from-green-300 via-green-950 to-green-500" >
                                     <h1 className="font-bold text-white text-3xl text-left">Reach Out To Us On Different Platform  </h1>
                                     <h1 className="text-sm text-white text-emerald-100 mb-10 text-left text-[15px] mt-[100px]">
-                                        Are you Willing to reach out to us don't worry , we've got you covered  <span className="text-purple-100 ">Select Platform</span>
+                                        {"Are you Willing to reach out to us don't worry , we've got you covered"}  <span className="text-purple-100 ">Select Platform</span>
                                     </h1>
                                 </div>
-                                <div className="w/12 h-[300px]">
-                                    <ul className="grid grid-cols-3 grid-row-3 gap-10">
+                                <div className="w-full lg:w/12 h-full md:h-[300px]">
 
+                                    <ul className="grid grid-cols-1 md:grid-cols-3 gap-10 my-3">
                                         <div>
                                             <ReachOutToUsTemplate link={siteConfig.links.Instagram} title="Instagram" logo={<Instagram color="inherit" />} />
                                         </div>
@@ -402,8 +410,8 @@ export default function Home() {
                                         <div>
                                             <ReachOutToUsTemplate link={siteConfig.links.facebook} title="Facebook" logo={<Facebook color="inherit" />} />
                                         </div>
-
                                     </ul>
+
                                 </div>
                             </div>
 
@@ -411,34 +419,40 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div className="flex flex-col h-full w-full justify-center items-center p-3 lg:p-12 py-10 lg:px-2" id='about-us' >
-                    <div className="flex md:flex-row flex-col justify-center md:space-x-[40px] lg:space-x-[90px] items-center space-y-2">
+                <div className="mt-[200px] flex flex-col h-full w-full justify-center items-start p-3 lg:p-12 py-10 lg:px-2" id='about-us' >
+                    <div className="flex md:flex-row flex-col justify-center center md:space-x-[40px] lg:space-x-[90px] items-center space-y-2">
                         <h1 className='md:hidden  text-5xl font-bold text-center mb-5 pt-3'>Learn More</h1>
                         <Image
                             src={AboutUss.src}
-                            width={500}
-                            height={500}
+                            width={100}
+                            height={100}
                             alt='about-us'
-                            className="rounded-md md:w-[400px]"
+                            className="rounded-md md:w-[500px] w-[300px]"
                             objectFit="cover"
                         />
-                        <div className=" md:w-full  sm:w-3/6 sm:px-2 px-0 w-full">
-                            <h1 className='hidden md:flex text-5xl font-bold sm:text-center xl:text-left mb-3'>About Us</h1>
-                            <div>
-                                <h1 className="font-[650] text-medium mb-1 ">King’s Cyber cafe App</h1>
-                                <p className="text-zinc-950 w-full sm:text-[16px] text-[15px] sm:w-full sm:w-[95%] w-full ">
-                                    An online cyber cafe app for various computer aided services, including graphic designing, project, presentation, direct-image printing, online student application assistant and more.
-                                </p>
-                                <p className="text-zinc-950 w-full sm:text-[16px] text-[15px] sm:w-full sm:w-[95%] w-full">We’re a committed company of skilful professionals ready to deliver quality and exceptional results. Our clients are first hand important and attended to.
-                                </p>
+                        <div className=" sm:w-full  lg:w-[36%] sm:px-2 px-0 w-full">
+                            <div className=' flex flex-col justify-center space-y-5'>
+                                <h1 className='hidden md:flex text-5xl font-bold sm:text-center xl:text-left mb-3'>Learn More</h1>
+                                <div>
+                                    <p className='font-[400] mt-2 mb-2'>
+                                        {"King's Cyber Cafe"}
+                                    </p>
+                                    <p className="text-zinc-950 sm:text-[17px] text-[15px]   w-full">
+                                        An online cyber cafe app for various computer aided services, including graphic designing, project, presentation, direct-image printing, online student application assistant and more.
+                                    </p>
+                                    <p className="text-zinc-950 w-full sm:text-[17px] text-[15px] sm:w-full sm:w-[95%] w-full">We’re a committed company of skilful professionals ready to deliver quality and exceptional results.
+                                        <p>  Our clients are first hand important and attended to.</p>
+                                    </p>
+                                </div>
                             </div>
-                            <Button type="button" variant='flat' className="mt-4 rounded-md bg-green-400 text-zinc-800">Learn more</Button>
+
+                            <Button type="button" variant='flat' className="mt-4 py-2 px-4 rounded-md bg-[#AEEE2E] text-zinc-950">Learn more</Button>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section className="flex flex-col items-center justify-enter">
+            <section className="flex flex-col items-center justify-center mt-20">
                 <h1 className="font-bold sm:text-inherit text-center text-3xl mb-5">
                     Our Satisfied customers
                 </h1>
@@ -446,7 +460,7 @@ export default function Home() {
             </section>
 
 
-            <div className="w-full">
+            <div className="w- mt-20 mb-20">
                 <CustomerFeedback>
                     {
                         CustomerData.map((props, index) => {
@@ -463,7 +477,7 @@ export default function Home() {
             </div>
 
             <div className="space-y-0 sm:space-y-5 h-full h-screen flex  sm:flex-row flex-col justify-center sm:justify-around items-center ">
-                <div className="font-bold text-2xl sm:text-3xl sm:px-2 px-5">
+                <div className="font-bold text-2xl md:text-4xl lg:text-5xl xl:text-6xl sm:px-2 px-5">
                     <p>
                         <span>{"Downlaod King's app on"} </span>
                     </p>
@@ -475,20 +489,18 @@ export default function Home() {
                     <p>
                         app store
                     </p>
-                    <Button variant="flat" className="bg-danger-500 text-slate-300 text-sm rounded-md">
+                    <Button variant="flat" className="bg-[#FF3131] text-white text-sm rounded-md">
                         Download App
                     </Button>
                 </div>
 
-                <div className='rounded-full w-[300px] h-[300px] sm:w-[450px] sm:h-[450px] relative flex flex-col justify-center items-center sm:py-1 py-[100px] ' style={{
-                    backgroundImage: `url(${SVGPattern.src})`
-                }}>
-                    <div className="absolute  rounded-full w-[300px] h-[300px] sm:w-[450px] sm:h-[450px] w-full h-full bg-gradient-to-b opacity-[0.4] from-white from-10% via-[#00C7CE59] via-30%  to-[#00C7CE59] to-90% bg-gradient-stops-0 "></div>
+                <div className='rounded-full w-[300px] h-[300px] sm:w-[450px] sm:h-[450px] relative flex flex-col justify-center items-center sm:py-1 py-[100px] bg-[#00B2B4]'>
                     <div className="relative">
                         <Image src={KingsMobilePreview.src} height={300} width={250} objectFit="cover" alt="mobile" className=" mt-[300px] left-0 right-0" />
                         <div>
                             {/* <Image src={GooglePlayStore.src} height={300} width={250} objectFit="cover" alt='mobile' className="absolute button-[400px] " /> */}
-                            <Image src={ApplePlayStore.src} height={300} width={200} objectFit="cover" alt="mobile" className="absolute top-[420px] left-[150px]" />
+                            <Image src={ApplePlayStore.src} height={300}
+                                width={200} objectFit="cover" alt="mobile" className="absolute top-[420px] left-[150px]" />
                         </div>
                         <div>
                             <Image src={GooglePlayStore.src} height={300} width={200} objectFit="cover" alt="mobile" className="absolute top-[360px] top-10 right-[150px]" />

@@ -6,19 +6,25 @@ import React from 'react'
 export default function ReachOutToUsTemplate(props: {
     logo: any,
     title: string,
-    link: string
+    link: string,
+    text?: string,
 }) {
     return (
 
-        <Link href={props.link}>
-            <div className='w-full  p-6 rounded-md scale-10 bg-white shadow-2xl hover:bg-purple-100'>
-                <h1 className='text-left font-bold text-green-600 text-[16px]'>{props.title}</h1>
-                <Divider />
-                <div className='w-full text-center items-center justify-center '>
-                    {
-                        props.logo
-                    }
+        <Link href={props.link} className='hover:scale-10 transition duration-300 ease-in ease-out'>
+
+
+            <div className='w-full  rounded-md scale-10 bg-white shadow-2xl hover:bg-purple-100'>
+                <div className=' max-w-[20px] max-h-[20px] w-full h-full relative'>
+                    <span className='absolute bg-[#AEEE2E] rounded-full top-[-20px] left-[-10px] w-[25px] h-[25px] '></span>
                 </div>
+                <div className='p-6'>
+                    <h1 className='text-left font-bold text-green-600 text-[16px]'>{props.title}</h1>
+                    <Divider className='opacity-[0.5]' />
+                    {props.text && <h1>{props.text}</h1>}
+                    <div className='w-full text-center items-center justify-center text-green-500 text-3xl  '>{props.logo}</div>
+                </div>
+
             </div>
 
         </Link >

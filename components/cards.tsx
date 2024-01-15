@@ -20,17 +20,19 @@ export default function CardTemplate(props: CardTemplateProps) {
 }
 
 export function Card(props: CardProps) {
-    return <div className="rounded-md mt-10 mb-10 max-h-[350px] max-w-[350px] h-[120px] sm:h-[300px]  w-[350px]  flex flex-col items-center justify-between">
+    return <div className="rounded-md mt-10 mb-10 max-h-[320px] max-w-[320px] h-[320px] sm:h-[320px]  w-[320px] px-2  flex flex-col items-center justify-between">
 
-        <div className="max-w-[300px]">
-            <h1 className="font-bold text-2xl text-center text-zinc-500">{props.topic}</h1>
-            <Divider />
-            <h1 className="text-left px-2 text-medium">{props.content}</h1>
+        <div className="max-w-[300px] w-full flex flex-col justify-between h-full items-center ">
+            <div>
+                <h1 className="font-bold text-2xl text-center text-zinc-500">{props.topic}</h1>
+                <h1 className="text-center  px-2 text-medium">{props.content}</h1>
+            </div>
+            <div className='bg-red-300 w-full flex justify-center items-center'>
+            </div><Button className="bg-[#FF3131] rounded-md px-2 py-2 w-1/2 text-slate-100 text-sm font-medium  items-center" variant="flat" type="button">
+                Send a Request
+            </Button>
         </div>
-        <Button className="bg-danger-500 text-slate-100 text-sm font-medium " variant="flat" type="button">
-            Send a Request
-        </Button>
-    </div>
+    </div >
 }
 
 
