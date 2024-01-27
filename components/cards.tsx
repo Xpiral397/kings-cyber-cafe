@@ -20,7 +20,7 @@ export default function CardTemplate(props: CardTemplateProps) {
 }
 
 export function Card(props: CardProps) {
-    return <div className="rounded-md mt-10 mb-10 max-h-[320px] max-w-[320px] h-[320px] sm:h-[320px]  w-[320px] px-2  flex flex-col items-center justify-between">
+    return <div className="rounded-md mt-10 mb-10 max-h-[320px] max-w-[320px] h-[220px] sm:h-[320px]  w-[320px] px-2  flex flex-col items-center justify-between">
 
         <div className="max-w-[300px] w-full flex flex-col justify-between h-full items-center ">
             <div>

@@ -23,6 +23,11 @@ export const siteConfig = {
 			onclick: () => ScrollToSite('service')
 		},
 		{
+			label: "Contact Us",
+			href: "/contactUs",
+			onclick: () => { }
+		},
+		{
 			label: "About us",
 			href: "/about",
 			onclick: () => ScrollToSite('about-us')

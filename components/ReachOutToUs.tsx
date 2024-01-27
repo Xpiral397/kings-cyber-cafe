@@ -5,7 +5,7 @@ import React from 'react'
 
 export default function ReachOutToUsTemplate(props: {
     logo: any,
-    title: string,
+    title: any,
     link: string,
     text?: string,
 }) {
@@ -19,7 +19,7 @@ export default function ReachOutToUsTemplate(props: {
                     <span className='absolute bg-[#AEEE2E] rounded-full top-[-20px] left-[-10px] w-[25px] h-[25px] '></span>
                 </div>
                 <div className='p-6'>
-                    <h1 className='text-left font-bold text-green-600 text-[16px]'>{props.title}</h1>
+                    <h1 className='text-left font-bold text-green-600 text-[16px] text-center'>{props.title}</h1>
                     <Divider className='opacity-[0.5]' />
                     {props.text && <h1>{props.text}</h1>}
                     <div className='w-full text-center items-center justify-center text-green-500 text-3xl  '>{props.logo}</div>

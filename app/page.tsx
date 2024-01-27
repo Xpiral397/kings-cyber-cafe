@@ -11,9 +11,9 @@ import MobileSample from '@/public/svgs/mb-display.svg'
 import MainView from "@/public/svgs/main-kings.svg"
 import Researcher from '@/public/svgs/researcher-svgs.svg'
 import LaptopAtWork from '@/public/svgs/laptotp.svg'
-import WomenTeaching from '@/public/svgs/wm-teach.svg'
-import PaperCounting from '@/public/svgs/paper-conting.svg'
-import GuyWriting from '@/public/svgs/guy-writing.svg'
+import WomenTeaching from '@/public/pngs/Image.jpg'
+import PaperCounting from '@/public/pngs/design.jpg'
+import GuyWriting from '@/public/pngs/scanning.jpg'
 import ResultCheking from '@/public/svgs/result-checking.svg'
 import ApplePlayStore from '@/public/svgs/apple-play.svg'
 import GooglePlayStore from '@/public/svgs/google-play.svg'
@@ -28,16 +28,17 @@ import MobileView from '@/public/svgs/mobile-view.svg'
 
 // NextUI
 import Image from "next/image";
+import {Image as Images} from "@nextui-org/react";
 import {Button} from "@nextui-org/button";
 import {ScrollShadow} from "@nextui-org/react";
 import CardTemplate, {Card, CardImage} from "@/components/cards";
 import {Customer, CustomerFeedback} from "@/components/customerFeedback";
 import {CustomerProps} from "@/typing/props";
-import {Kings} from "next/font/google";
 import Carousal from "@/components/carousal";
 import {Facebook, Instagram, LinkedIn, LocationCity, LocationCityRounded, LocationOn, Twitter, WhatsApp} from "@mui/icons-material";
 import ReachOutToUsTemplate from "@/components/ReachOutToUs";
-
+import Startar from "@/components/Starter";
+import Footer from "@/components/footer";
 
 
 export default function Home() {
@@ -49,12 +50,29 @@ export default function Home() {
 
 
     // Images
-    const Image1 = <Image src={PaperCounting.src} alt='result-cheking' width={300} height={100} />
-    const Image2 = <Image src={WomenTeaching.src} alt='result-cheking' width={400} height={500} />
+    const Image1 = <Images
+        width={340}
+        src={PaperCounting.src}
+        alt="NextUI Album Cover"
+        classNames="m-5"
+    />
+    const Image2 = <Images
+        isBlurred
+        width={340}
+        src={WomenTeaching.src}
+        alt="NextUI Album Cover"
+        classNames="m-5"
+    />
     const ImageCustomer1 = <Image src={Customer1.src} width={64} height={300} alt="customer-image" />
     const ImageCustomer2 = <Image src={Customer2.src} width={64} height={300} alt="customer-image" />
     const ImageCustomer3 = <Image src={Customer3.src} width={64} height={300} alt="customer-image" />
-    const Image3 = <Image className=" max-h-[350px] max-w-[250px]" src={GuyWriting.src} alt='result-cheking' width={400} height={0} />
+    const Image3 = <Images
+        isBlurred
+        width={340}
+        src={GuyWriting.src}
+        alt="NextUI Album Cover"
+        classNames="m-5"
+    />
 
 
     // Data
@@ -86,58 +104,8 @@ export default function Home() {
 
     return (
         <main className="space-y-10" id='home'>
-            <section className="mb-10 w-full  flex flex-col items-center justify-center space-y-10" >
-                <div className="relative h-full w-full overflow-hidden sm:h-[50vh] h-[40vh]">
-                    <div>
-                        <Image
-                            src={MainView}
-                            alt="Mobile Sample"
-                            layout="fill"
-                            objectFit="cover"
-                            quality={900} // Adjust quality as needed
-                        />
-                        <div className="px-2 card absolute w-full sm:h-[55vh] h-[60vh] bg-[#008C83] opacity-[0.5]"></div>
-                    </div>
-                    <div className="flex justify-center items-center relative  w-full h-[60vh] bg-[#00000001]">
-                        <div className="flex flex-col justify-between h-full">
-                            <div className="sm:hidden flex">
-                                <section className="flex flex-col mt-10 w-full h-full justify-center items-center text-white p-8">
-                                    <h1 className="lg:px-2 md:text-3xl lg:text-4xl xl:text-6xl font-medium mb-4 text-center">
-                                        <p>Your Trusted</p>
-                                        <p className="whitespace-nowrap">Partner In <span className="text-orange-500">Digital</span></p>
-                                        <p>Cafe Experience</p>
-                                    </h1>
-                                    <Button variant="flat" className="rounded-md p-6 px-5 sm:w-full bg-red-500 text-white text-sm">
-                                        Start A Project
-                                    </Button>
-                                </section>
-                            </div>
-                        </div>
-
-                        <div className="hidden sm:flex items-center justify-around w-full">
-                            <section className=" flex flex-col   text-white ">
-                                <h1 className="text-4xl md:text-6xl font-medium space-y-2 ">
-                                    <p>Your Trusted</p>
-                                    <p>Partner In <span className="text-orange-500">Digital</span></p>
-                                    <p>Cafe Experience</p>
-                                </h1>
-                                <Button variant="flat" size="md" className="mt-5 rounded-md bg-danger-500  w-[300px] text-white text-sm">
-                                    Start A Project
-                                </Button>
-                            </section>
-                            <div className="md:w-[300px] w-[225px] h-[500px]">
-                                <Image
-                                    className="md:w-[400px] w-[300px] mb-20  transform skew-y-12 "
-                                    src={MobileSample}
-                                    alt="Mobile Sample"
-                                    height={250}
-                                    width={400}
-                                    objectFit="cover"
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <section>
+                <Startar />
 
                 <div className="space-y-10 w-full flex flex-col justify-center items-center" id='service'>
                     <div>
@@ -195,7 +163,7 @@ export default function Home() {
                     />
                 </div>
 
-                <div className=" mt-10 flex flex-row items-center h-full md:space-x-[50px] lg:space-x-[100px] mt-10" id="customer">
+                <div className="justify-center w-full mt-10 flex flex-row items-center h-full md:space-x-[50px] lg:space-x-[100px] mt-10" id="customer">
                     <div>
                         <Image
                             className="hidden md:flex"
@@ -256,9 +224,9 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div>
-                    <ScrollShadow orientation="vertical" className="mt-20 max-width-full h-full">
-                        {/* <div className="hidden md:flex -space-x-5 items-center justify-center ">
+                <div className="hidden lg:flex justify-center items-center w-full h-full ">
+                    {/* <ScrollShadow orientation="vertical" className="flex items-center  justify-center mt-20 max-width-full h-full"> */}
+                    {/* <div className="hidden md:flex -space-x-5 items-center justify-center ">
                             <div className="w-full flex flex-col items-center justify-between">
                                 <div>{GraphicsCard}</div>
                                 <div>{Image2}</div>
@@ -272,37 +240,42 @@ export default function Home() {
                                 <div>{Image2}</div>
                             </div>
                         </div> */}
-                        <div className='hidden md:grid  w-full grid grid-cols-3 gap-0'>
+                    <div className='mt-[200px]'>
+                        <div className="flex space-y-5">
                             <div>{GraphicsCard}</div>
                             <div>{Image1}</div>
                             <div>{PhotoCopy}</div>
-                            <div>{Image1}</div>
+                        </div>
+
+                        <div className="flex">
+                            <div>{Image3}</div>
                             <div>{ResultCheckings}</div>
-                            <div>{Image1}</div>
-
+                            <div>{Image2}</div>
 
                         </div>
-                    </ScrollShadow>
+                    </div>
+                    {/* </ScrollShadow> */}
 
-                    <ScrollShadow orientation="vertical" className="max-width-[100px] scale-[800px] w-full h-full">
-                        <div className="md:hidden flex flex-col -space-x-5 items-center justify-center ">
-                            <div className="w-full flex flex-col items-center justify-between">
-                                <div>{Image1}</div>
-                                <div>{GraphicsCard}</div>
 
-                            </div>
-                            <div className="-full flex flex-col items-center justify-center">
-                                <div>{Image2}</div>
-                                <div>{ResultCheckings}</div>
-
-                            </div>
-                            <div className="-full flex flex-col items-center justify-center">
-                                <div>{Image3}</div>
-                                <div>{PhotoCopy}</div>
-                            </div>
-                        </div>
-                    </ScrollShadow>
                 </div>
+                <ScrollShadow orientation="vertical" className="max-width-[100px] scale-[800px] w-full h-full">
+                    <div className=" mt-[100px] lg:hidden flex flex-col -space-x-5 items-center justify-center ">
+                        <div className="w-full flex flex-col items-center justify-between">
+                            <div>{Image1}</div>
+                            <div>{GraphicsCard}</div>
+
+                        </div>
+                        <div className="-full flex flex-col items-center justify-center">
+                            <div>{Image2}</div>
+                            <div>{ResultCheckings}</div>
+
+                        </div>
+                        <div className="-full flex flex-col items-center justify-center">
+                            <div>{Image3}</div>
+                            <div>{PhotoCopy}</div>
+                        </div>
+                    </div>
+                </ScrollShadow>
             </section>
 
             <section>
@@ -402,7 +375,7 @@ export default function Home() {
                                             <ReachOutToUsTemplate link={siteConfig.links.whatsapp} title="WhatsApp" logo={<WhatsApp color="inherit" />} />
                                         </div>
                                         <div>
-                                            <ReachOutToUsTemplate link={siteConfig.links.Linkedln} title="Linkedln" logo={<LinkedIn color=" inherit" />} />
+                                            <ReachOutToUsTemplate link={siteConfig.links.Linkedln} title="Linkedln" logo={<LinkedIn color="inherit" />} />
                                         </div>
                                         <div>
                                             <ReachOutToUsTemplate link={siteConfig.links.twitter} title="Twitter | X" logo={<Twitter color="inherit" />} />
@@ -508,6 +481,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
+            <Footer />
         </main >
     );
 }

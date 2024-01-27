@@ -56,7 +56,7 @@ export const Navbar = () => {
 	);
 
 	return (
-		<NextUINavbar className="w-full flex justify-between w-full" maxWidth="full" position="sticky">
+		<NextUINavbar className="shadow-md w-full flex justify-between w-full  " maxWidth="full" position="sticky">
 			<NavbarContent className="flex justify-between " >
 				<NavbarBrand as="li" className="gap-3 w-full">
 					<NextLink className="flex justify-start items-center " href="/">
@@ -69,13 +69,14 @@ export const Navbar = () => {
 				<NavbarItem>
 					<ul className="hidden lg:flex gap-8 justify-start ml-2 flex-1">
 						{siteConfig.navItems.map((item: any, index: number) => (
-							<NavbarItem key={item.href}f 
+							<NavbarItem key={item.href}
+
 								className={clsx(
 									linkStyles({color: "foreground"}),
 									"data-[active=true]:text-primary data-[active=true]:font-medium"
 								)}
 								onClick={() => item.onclick()}>
-								<p className="font-medium border-danger-300 border-b">{item.label}</p>
+								<Link href={item.href ?? "#"}><p className="text-slate-900 font-[450] border-danger-300 ">{item.label}</p></Link>
 							</NavbarItem>
 						))}
 					</ul>
@@ -116,7 +117,7 @@ export const Navbar = () => {
 											? "danger"
 											: "foreground"
 								}
-								href="#"
+								href={item.href ?? "#"}
 								size="lg"
 								onClick={() => item.onclick()}
 							>

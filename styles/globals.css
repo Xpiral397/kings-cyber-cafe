@@ -2,6 +2,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.scroll-shadow-container {
+    scroll-behavior: smooth;
+}
+
 .lit-img-clip {
     background-size: 100% 100%;
     background-position: center;
@@ -17,4 +21,9 @@
     max-height: 250px;
     min-width: 250px;
     width: 300px;
+}
+
+.chat-shape {
+    margin-top: -20px;
+    clip-path: circle(77% at 48% 94%);
 }
