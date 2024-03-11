@@ -26,6 +26,7 @@ import {
   WhatsApp,
 } from "@/components/icon";
 import { TwitterIcon } from "@/components/icons";
+import Footer from "@/components/footer";
 
 export default function Page() {
   return (
@@ -33,10 +34,10 @@ export default function Page() {
       <ComponentStarter
         imageSrc={aboutus}
         text=<h1 className="font-[Roboto] px-20 text-center justify-center mt-40 text-slate-100 font-[700] text-4xl">
-         Make An Order Now 
+          Make An Order Now
         </h1>
       />
-      <div className="flex flex-col justify-around mt-10 space-x-10 md:flex-row">
+      <div className="flex flex-col justify-around mt-10 space-y-5 md::space-x-10 sm:space-y-0 md:flex-row">
         <div className="flex flex-col space-y-10">
           <div className="py-5 min-h-[150px] min-w-[250px] block justify-left px-2 space-y-5 bg-white rounded-md shadow-md sm:space-x-10">
             <div className="flex flex-col w-full h-full justify-left ">
@@ -92,7 +93,7 @@ export default function Page() {
           </div>
         </div>
 
-        <div className="px-4 py-5 rounded-md bg-zinc-200 space-y-5 sm:w-[600px]  w-full ">
+        <div className="md:px-4 py-5 rounded-md bg-zinc-200 space-y-5 w-full sm:w-[600px]   ">
           <h1 className="text-4xl font-[600px]">Leave Us A Meessage</h1>
           <div className="flex flex-col justify-between mt-10 ">
             <label>Name*</label>
@@ -157,6 +158,7 @@ export default function Page() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
