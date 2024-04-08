@@ -23,6 +23,7 @@ const Options: NextAuthOptions = {
                 gender: {label:'Username', type:"text", placeholder:"Enter your credentials"},
             },
             async authorize(credentials, req) {
+                console.log()
                return await new Promise(()=>{credentials: credentials})
            }
         })
